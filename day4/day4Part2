@@ -117,7 +117,7 @@ while True:
 
 #print(changeVals(boards, boolBoards, numbers))
 boards, boolBoards, num = changeVals(boards, boolBoards, numbers)
-print(f"\nboard\n{boards[0]}\n\nboolboard\n{boolBoards[0]}\n\nnum: {num}")
+print(f"\nboard\n{np.array(boards[0])}\n\nboolboard\n{boolBoards[0]}\n\nnum: {num}")
 
 res = sumUnmarked(boards[0], boolBoards[0])
 print(f"sum of unmarked: {res} \nmultiplied by last num: {res*num}")
