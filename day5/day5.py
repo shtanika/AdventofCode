@@ -1,9 +1,7 @@
 import numpy as np
-from numpy.lib import math
-import math
 
 # Class variables: x1, y1, x2, y2
-# Class functions: getMaxX, getMaxY, isHorizontal, isVertical, getLength
+# Class functions: getMaxX, getMaxY, isHorizontal, isVertical
 class Line():
     def __init__(self, l):
         self.x1 = int(l.split(",")[0].strip())
@@ -59,14 +57,7 @@ class Line():
         if(abs((self.y2-self.y1)/(self.x2-self.x1)) == 1):
             return True
         return False
-
-    # ONLY WORKS IF LINE IS HORIZONTAL OR VERTICAL
-    def getLength(self):
-        if(self.x1==self.x2):
-            return abs(self.y2-self.y1)
-        return abs(self.x2-self.x1)
-
-
+        
 # PART ONE
 with open("day5/input.txt") as f:
     lines = f.readlines()
@@ -169,6 +160,3 @@ f.close()
 
 # print(f"{diagram}\n")
 print(f"\nPART TWO\nNumber of points >= 2: {numPoints}")
-
-
-
