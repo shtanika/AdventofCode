@@ -38,7 +38,7 @@ countSumIncrements xs = compareFirstThree xs + countSumIncrements (tail xs)
 
 main :: IO ()
 main = do
-    content <- readFile "day1/input.txt"
+    content <- readFile "2021/inputs/1.txt"
     let bigNumbers = getNumbers content
 
     -- part 1

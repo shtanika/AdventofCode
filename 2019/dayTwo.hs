@@ -57,7 +57,7 @@ intCode2 lst index = if not(99 `elem` ([x | x <- getSublist lst index (index+3)]
 
 main :: IO ()
 main = do
-    content <- readFile "2019/inputs/two.txt"
+    content <- readFile "2019/inputs/2.txt"
     let numbers = getNumbers content
     let newNumbers1 = replace 1 12 numbers
     let newNumbers2 = replace 2 2 newNumbers1

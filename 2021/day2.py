@@ -1,5 +1,5 @@
 # PART ONE: CHECK DEPTH INCREASE + HORIZONTAL INCREASE
-input = open("day2/example.txt")
+input = open("2021/inputs/2.txt")
 direction = []
 horizontal = 0
 vertical = 0
@@ -24,7 +24,7 @@ print(f"PART ONE\nThe horizontal position is {horizontal}. The depth is {vertica
 print(f"Multiplied they are {horizontal*vertical}.")
 
 # PART ONE: CHECK DEPTH INCREASE + HORIZONTAL INCREASE WITH AIM VALUE    
-input = open("day2/input.txt")
+input = open("2021/inputs/2.txt")
 horizontal = 0
 vertical = 0
 
@@ -42,8 +42,6 @@ for line in input:
     else:
         aim += int(direction[1])
     
-    print(horizontal)
-
 input.close()    
 
 print(f"\nPART TWO\nThe horizontal position is {horizontal}. The depth is {vertical}.")

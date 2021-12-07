@@ -2,7 +2,7 @@ import statistics
 import numpy as np
 
 # PART ONE
-input = open("day7/input.txt")
+input = open("2021/inputs/7.txt")
 positions = list(map(int,input.readline().split(",")))
 
 # get median

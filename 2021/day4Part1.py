@@ -5,14 +5,14 @@ from  itertools import chain
 from numpy.core.numeric import indices
 
 # Counts number of lines without anything to get num of boards
-with open('day4/input.txt') as f:
+with open('2021/inputs/4.txt') as f:
     f.readline()
     f.readline()
     numBoards = sum(line.isspace() for line in f)
 f.close()
 
 
-input = open("day4/input.txt")
+input = open("2021/inputs/4.txt")
 
 # Gets list of numbers
 numbers = list(map(int,input.readline().split(",")))
@@ -140,28 +140,3 @@ for num in numbers:
 
 res = sumUnmarked(boards[0], boolBoards[0])
 print(f"sum of unmarked: {res} \nmultiplied by last num: {res*n}")
-
-#PART TWO: FIND LAST ONE
-'''
-k = 0
-for num in numbers:
-    # boards, boolBoards = checkBoards(boards, boolBoards, num)
-    #if(countWinners(boolBoards)<numBoards):
-    #    boards, boolBoards, n, idx = changeVals2(boards, boolBoards, num, idx)
-    if(len(winningBoards)<numBoards):
-        boards, boolBoards, winningBoards, n = changeVals2(boards, boolBoards, winningBoards, num)
-
-    winningBoards = list(set(winningBoards))
-
-    k+=1
-    print(f"index {k} and num {num}")
-
-#board = boards[0]      
-#boolBoard = boolBoards[0]
-#board, boolBoard, n = lastVals(board, boolBoard, num)
-print(f"\n{boards}\nnum: {n}")
-
-#print(f"\n{boards}\n{boolBoards}\n")
-res = sumUnmarked(boards[0], boolBoards[0])
-print(f"sum of unmarked: {res} \nmultiplied by last num: {res*n}")
-'''

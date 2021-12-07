@@ -1,7 +1,7 @@
 from collections import Counter
 
 # PART ONE
-input = open("day6/input.txt")
+input = open("2021/inputs/6.txt")
 timers = list(map(int,input.readline().split(",")))
 
 days = 80
@@ -29,7 +29,7 @@ def decrement(timers):
                 timers[k] -= timers[k]    
     return timers
 
-input = open("day6/input.txt")
+input = open("2021/inputs/6.txt")
 timerList = list(map(int,input.readline().split(",")))
 timers = {k:timerList.count(k) for k in range(10)}
 #print(timers)

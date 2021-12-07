@@ -36,7 +36,7 @@ def findGammaAndEpsilon(str):
     return (0 if len(lst0)>len(lst1) else 1), (1 if len(lst0)>len(lst1) else 0)
 
 
-input = open("day3/input.txt")
+input = open("2021/inputs/3.txt")
 gamma = ""
 epsilon = ""
 col = ""
@@ -68,7 +68,7 @@ def findRating(lst, gamma, pos):
     return lst
 
 
-input = open("day3/input.txt")
+input = open("2021/inputs/3.txt")
 lst = []
 temp = []
 

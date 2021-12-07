@@ -59,7 +59,7 @@ class Line():
         return False
 
 # PART ONE
-with open("day5/input.txt") as f:
+with open("2021/inputs/5.txt") as f:
     lines = f.readlines()
 
 # Make all lines into Line object only if horizontal or vertical lines
@@ -99,7 +99,7 @@ print(f"PART ONE\nNumber of points >= 2: {numPoints}")
 
 
 #PART TWO
-with open("day5/input.txt") as f:
+with open("2021/inputs/5.txt") as f:
     lines = f.readlines()
 
 # Make all lines into Line object only if horizontal, vertical, or 45 degrees

@@ -53,7 +53,7 @@ mult (a,b,c) = a*b
 
 main :: IO ()
 main = do
-    content <- readFile "day2/input.txt"
+    content <- readFile "2021/inputs/2.txt"
     let commands = [getCommandAndValue x | x <- wordsWhen(=='\n') content]
     let steps = followInstructions commands []
 

@@ -5,14 +5,14 @@ from  itertools import chain
 from numpy.core.numeric import indices
 
 # Counts number of lines without anything to get num of boards
-with open('day4/input.txt') as f:
+with open('2021/inputs/4.txt') as f:
     f.readline()
     f.readline()
     numBoards = sum(line.isspace() for line in f)
 f.close()
 
 
-input = open("day4/input.txt")
+input = open("2021/inputs/4.txt")
 
 # Gets list of numbers
 numbers = list(map(int,input.readline().split(",")))

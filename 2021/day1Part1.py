@@ -1,5 +1,5 @@
 # PART ONE: CHECK IF PREVIOUS LINE IS LARGER THAN LAST LINE
-input = open("day1/input.txt")
+input = open("2021/inputs/1.txt")
 values = []
 i = 0
 larger = 0

@@ -1,5 +1,5 @@
 #PART TWO: CHECK EACH TRIO OF NUMBERS (INCLUSIVE) IF LARGER THAN LAST TRIO
-input = open("C:/Users/shama/adventofcode/day1/input.txt")
+input = open("2021/inputs/1.txt")
 values = []
 trios = []
 i = 0

@@ -10,7 +10,7 @@ recFuel x = calcFuel x + recFuel(calcFuel x)
 
 main :: IO ()
 main= do
-    content <- readFile "2019/inputs/one.txt"
+    content <- readFile "2019/inputs/1.txt"
     let numbers = getNumbers content
     
     print $ sum [calcFuel x | x <- numbers]
