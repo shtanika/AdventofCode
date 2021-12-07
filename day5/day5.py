@@ -116,7 +116,6 @@ diagram = np.array(diagram)
 
 
 for i in range(len(allLines)):
-    length = allLines[i].getLength()
     x1 = allLines[i].x1
     y1 = allLines[i].y1
     x2 = allLines[i].x2
