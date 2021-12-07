@@ -14,10 +14,7 @@ print(f"PART ONE\ntotal fuel: {total}\n")
 
 # PART TWO
 def getFuel(num):
-    total = 0
-    for i in range(num+1):
-        total += i
-    return total
+    return int((num*(num+1)/2))
 
 def findPos(positions):
     fuels = {}
