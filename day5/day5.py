@@ -57,7 +57,7 @@ class Line():
         if(abs((self.y2-self.y1)/(self.x2-self.x1)) == 1):
             return True
         return False
-        
+
 # PART ONE
 with open("day5/input.txt") as f:
     lines = f.readlines()
@@ -102,7 +102,7 @@ print(f"PART ONE\nNumber of points >= 2: {numPoints}")
 with open("day5/input.txt") as f:
     lines = f.readlines()
 
-# Make all lines into Line object only if horizontal, vertical line, or 45 degree  lines
+# Make all lines into Line object only if horizontal, vertical, or 45 degrees
 rawLines = list(line.rstrip('\n') for line in lines)
 allLines = [Line(line) for line in rawLines if (Line(line).isHorizontal() or Line(line).isVertical() or Line(line).is45())]
 
