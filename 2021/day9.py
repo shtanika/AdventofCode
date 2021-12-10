@@ -1,6 +1,5 @@
 import numpy as np
 from skimage import measure
-from collections import Counter
 
 def checkAdjacent(heightMap):
     lowPoints = []
