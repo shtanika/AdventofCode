@@ -1,5 +1,3 @@
-from re import search
-
 def flatten(lst):
     flat = []
     for sublist in lst:
