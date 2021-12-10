@@ -41,6 +41,10 @@ def createMapping(inp):
 def checkNums(output, mapping):
     nums=""
     for digit in output:
+        # digits in 4 minus the digits in 1
+        map5 = mapping[1].replace(mapping[0][0],"")
+        map5 = map5.replace(mapping[0][1],"")
+
         # unique vals: 1, 4, 7, or, 8
         if len(digit)==2:
             nums += str(1)
@@ -61,22 +65,27 @@ def checkNums(output, mapping):
         elif len(digit)==5:
             if(hasString(digit,mapping[0])):
                 nums += str(3)
-            elif(hasString(digit,mapping[0])):
+            elif(hasString(digit,map5)):
                 nums += str(5)
             else:
                 nums += str(2)
 
         # can be 0, 6, or 9
-        # 9 has 7 and 4 inside of it
+        # 9 has 4 inside of it
         # 0 not 9 but 1 is inside of it
         # else 6
         elif len(digit)==6:
-            nums += str(6)
+            if(hasString(digit,mapping[1])):
+                nums += str(9)
+            elif(hasString(digit,mapping[0])):
+                nums += str(0)
+            else:
+                nums += str(6)
     return nums    
 
 
 # PART ONE
-input = open("2021/inputs/ex8.txt")
+input = open("2021/inputs/8.txt")
 
 digits = list(line.rstrip('\n').split("| ",1)[1] for line in input)
 digits = list(line.split(" ") for line in digits)
@@ -86,25 +95,20 @@ print(f"PART ONE\nTotal instances of 1, 4, 7, or 8 in output: {checkUnique(allDi
 input.close()
 
 # PART TWO
-input = open("2021/inputs/ex8.txt")
+input = open("2021/inputs/8.txt")
 inputs = list(line.rstrip('\n').split("| ",1)[0] for line in input)
 inputs = list(line.strip().split(" ") for line in inputs)
 
-'''
 # loop to get every output number
 outputs = []
 for i in range (len(digits)):
     mapping = createMapping(inputs[i])
-    outputs += checkNums(digits[i], mapping)
-    print(mapping)
-print(outputs)
-'''
+    n = checkNums(digits[i], mapping)
+    outputs.append(int(n))
 
-# TESTING
-mapping = createMapping(inputs[0])
-#n = checkNums(digits[0],mapping)
-#print(n)
+#print(outputs)
 
+total = sum(outputs)
 
-print(f"PART TWO\nSum of all output values: {checkUnique(allDigits)}\n")
+print(f"PART TWO\nSum of all output values: {total}\n")
 input.close()
