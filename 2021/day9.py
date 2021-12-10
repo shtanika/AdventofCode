@@ -1,4 +1,6 @@
 import numpy as np
+from skimage import measure
+from collections import Counter
 
 def checkAdjacent(heightMap):
     lowPoints = []
@@ -51,14 +53,19 @@ def checkAdjacent(heightMap):
                     lowPoints.append(heightMap[i][j])
     return lowPoints
 
+def getBasinSizes(basins,n):
+    nums={}
+    for i in range(1,n+1):
+        nums[i] = np.count_nonzero(basins==i)
+    return nums
 
 # PART ONE 
 # Counts number of lines 
-with open('2021/inputs/ex9.txt') as f:
+with open('2021/inputs/9.txt') as f:
     numLines = sum(1 for line in f)
 f.close()
 
-input = open("2021/inputs/ex9.txt")
+input = open("2021/inputs/9.txt")
 
 heightMap = []
 for _ in range(numLines):
@@ -68,8 +75,24 @@ for _ in range(numLines):
 
 lows = checkAdjacent(heightMap)
 lows = [i+1 for i in lows]
-print(f"Sum of all low points: {sum(lows)}")
+print(f"Sum of all low points: {sum(lows)}\n")
 input.close()
 
 # PART TWO 
-# maybe make dictionary with indices as keys and low point as value?
+# find all values not equal to 9, sum connected ones
+heightMap = np.array(heightMap)
+basins = heightMap!=9
+basins = basins.astype(int)
+basins = measure.label(basins, connectivity=1)
+#print(f"{basins}\n")
+
+numBasins = np.amax(basins)
+
+nums = getBasinSizes(basins,numBasins)
+
+largest=[]
+for i in range(3):
+    largest.append(nums[max(nums,key=nums.get)])
+    del nums[max(nums,key=nums.get)]
+
+print(f"Product of three largest basins: {np.prod(largest)}\n")
