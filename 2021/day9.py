@@ -60,11 +60,11 @@ def getBasinSizes(basins,n):
 
 # PART ONE 
 # Counts number of lines 
-with open('2021/inputs/ex9.txt') as f:
+with open('2021/inputs/9.txt') as f:
     numLines = sum(1 for line in f)
 f.close()
 
-input = open("2021/inputs/ex9.txt")
+input = open("2021/inputs/9.txt")
 
 heightMap = []
 for _ in range(numLines):
